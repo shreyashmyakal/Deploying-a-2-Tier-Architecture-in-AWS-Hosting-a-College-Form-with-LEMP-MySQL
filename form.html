@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>  
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDEybzd4dzBvMmhhajgyNjZ6ZGpyb21uZm52N3FsYWU1dHlqOXFkeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7btZ3T6y3JTmjg4w/giphy.gif') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        input:focus, textarea:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+        .gender-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .btn {
+            background: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+            width: 100%;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>  
+ 
+<div class="container">
+    <h2>Contact Form</h2>
+    <form method="post" action="submit.php">  
+        <label>Name:</label>
+        <input type="text" name="name" required>
+
+        <label>E-mail:</label>
+        <input type="email" name="email" required>
+
+        <label>Website:</label>
+        <input type="url" name="website">
+
+        <label>Comment:</label>
+        <textarea name="comment" rows="4"></textarea>
+
+        <label>Gender:</label>
+        <div class="gender-group">
+            <label><input type="radio" name="gender" value="female"> Female</label>
+            <label><input type="radio" name="gender" value="male"> Male</label>
+            <label><input type="radio" name="gender" value="other"> Other</label>
+        </div>
+        
+        <input type="submit" name="submit" value="Submit" class="btn">  
+    </form>
+</div>
+ 
+</body>
+</html>
